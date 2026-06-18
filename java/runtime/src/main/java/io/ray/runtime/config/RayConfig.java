@@ -141,7 +141,7 @@ public class RayConfig {
     String localNamespace = config.getString("ray.job.namespace");
     if (workerMode == WorkerType.DRIVER) {
       namespace =
-          StringUtils.isEmpty(localNamespace) ? UUID.randomUUID().toString() : localNamespace;
+          StringUtils.isEmpty(localNamespace) ? com.adapstory.commons.id.Uuid7.randomUuid().toString() : localNamespace;
     } else {
       /// We shouldn't set it for worker.
       namespace = null;

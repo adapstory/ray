@@ -13,7 +13,7 @@ public abstract class DAGNode implements DAGNodeBase {
 
   private final Map<String, Object> boundOtherArgsToResolve;
 
-  private String stableUuid = UUID.randomUUID().toString().replace("-", "");
+  private String stableUuid = com.adapstory.commons.id.Uuid7.randomUuid().toString().replace("-", "");
 
   public DAGNode(
       Object[] args, Map<String, Object> options, Map<String, Object> otherArgsToResolve) {
