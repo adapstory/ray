@@ -554,7 +554,7 @@ class VLLMEngine(LLMEngine):
         executor_class = Executor.get_class(vllm_engine_config)
         logger.info(f"Using executor class: {executor_class}")
         # Report per-request token progress to the deployment's KV router actor
-        # when one is attached (KVAwareRouter); otherwise the wrap is inert.
+        # if it is attached; otherwise the wrap is inert.
         engine_client = enable_token_tracking(AsyncLLM)(
             vllm_config=vllm_engine_config,
             executor_class=executor_class,
